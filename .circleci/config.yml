@@ -25,7 +25,17 @@ jobs:
     steps:
       - run:
           name: "Testing"
-          command: "echo Hello << FIRST_VAR >>"
+          command: "echo We are just testing"
+
+  print-var:
+    docker:
+      - image: circleci/node:13.8.0
+
+    steps:
+      - run:
+          name: "Testing"
+          command: "echo Hello ${FIRST_VAR}"
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
